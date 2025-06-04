@@ -1,0 +1,246 @@
+[
+  {
+    "urunKodu": "SYMI0002",
+    "teklifTarihi": "2025-06-04",
+    "terminTarihi": "2025-06-20",
+    "maliyetler": {
+      "kumasTipi": {
+        "aciklama": "xxxx",
+        "birim": "",
+        "birimTipi": "Metre",
+        "fiyat": 32,
+        "paraBirimi": "USD"
+      },
+      "aksesuar1": {
+        "aciklama": "xxx",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 22,
+        "paraBirimi": "USD"
+      },
+      "aksesuar2": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "aksesuar3": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "kesimYeri": {
+        "aciklama": "xxx",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 1,
+        "paraBirimi": "USD"
+      },
+      "dikimYeri": {
+        "aciklama": "xxx",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 1,
+        "paraBirimi": "USD"
+      },
+      "utuPaket": {
+        "aciklama": "xxx",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 1,
+        "paraBirimi": "USD"
+      },
+      "yikamaYeri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "ekMaliyet1": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "ekMaliyet2": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "isletmeGiderleri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      },
+      "kar": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 2,
+        "paraBirimi": "USD"
+      },
+      "sevkiyat": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0,
+        "paraBirimi": "TL"
+      }
+    },
+    "notlar": "",
+    "toplam": 59,
+    "kdvOrani": 10,
+    "genelToplam": 64.9,
+    "iptalDurumu": false,
+    "ekstraNotlar": "",
+    "paraBirimiToplam": {
+      "TL": 0,
+      "USD": 59,
+      "EUR": 0,
+      "GBP": 0
+    },
+    "siparisDurumu": "TEKLIF_VERILDI",
+    "durum_tarihleri": {
+      "teklif_tarihi": "2025-06-04 18:17:46",
+      "onay_tarihi": "2025-06-04 18:16:08",
+      "red_tarihi": "2025-06-04 18:15:42",
+      "uretim_tarihi": "2025-06-04 18:16:22",
+      "teslim_tarihi": ""
+    },
+    "id": 1749050109224,
+    "createdAt": "2025-06-04T15:15:09.224Z",
+    "seriNo": 0,
+    "updatedAt": "2025-06-04T15:17:48.762Z"
+  },
+  {
+    "urunKodu": "SYMI0003",
+    "teklifTarihi": "2025-06-04",
+    "terminTarihi": "2025-06-17",
+    "maliyetler": {
+      "kumasTipi": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Metre",
+        "fiyat": 12,
+        "paraBirimi": "TL"
+      },
+      "aksesuar1": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 12,
+        "paraBirimi": "TL"
+      },
+      "aksesuar2": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 2,
+        "paraBirimi": "TL"
+      },
+      "aksesuar3": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 3,
+        "paraBirimi": "TL"
+      },
+      "kesimYeri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 4,
+        "paraBirimi": "TL"
+      },
+      "dikimYeri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 5,
+        "paraBirimi": "TL"
+      },
+      "utuPaket": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0.99,
+        "paraBirimi": "TL"
+      },
+      "yikamaYeri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 2,
+        "paraBirimi": "TL"
+      },
+      "ekMaliyet1": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 2,
+        "paraBirimi": "TL"
+      },
+      "ekMaliyet2": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "Adet",
+        "fiyat": 2,
+        "paraBirimi": "TL"
+      },
+      "isletmeGiderleri": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 1,
+        "paraBirimi": "TL"
+      },
+      "kar": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0.99,
+        "paraBirimi": "TL"
+      },
+      "sevkiyat": {
+        "aciklama": "",
+        "birim": "",
+        "birimTipi": "",
+        "fiyat": 0.99,
+        "paraBirimi": "TL"
+      }
+    },
+    "notlar": "",
+    "toplam": 47.970000000000006,
+    "kdvOrani": 10,
+    "genelToplam": 52.76700000000001,
+    "iptalDurumu": false,
+    "ekstraNotlar": "",
+    "paraBirimiToplam": {
+      "TL": 47.970000000000006,
+      "USD": 0,
+      "EUR": 0,
+      "GBP": 0
+    },
+    "siparisDurumu": "TEKLIF_VERILDI",
+    "durum_tarihleri": {
+      "teklif_tarihi": "2025-06-04 18:21:33",
+      "onay_tarihi": "",
+      "red_tarihi": "",
+      "uretim_tarihi": "",
+      "teslim_tarihi": ""
+    },
+    "id": 1749050495975,
+    "createdAt": "2025-06-04T15:21:35.975Z",
+    "seriNo": 0,
+    "updatedAt": "2025-06-04T15:22:03.603Z"
+  }
+]
