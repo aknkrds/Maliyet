@@ -1,154 +1,179 @@
 # Maliyet Hesaplama Uygulaması
 
-Bu uygulama, üretim maliyetlerini hesaplamak ve takip etmek için geliştirilmiş modern bir web uygulamasıdır.
+Bu uygulama, tekstil ve üretim sektörü için maliyet hesaplama ve takip sistemi olarak geliştirilmiştir. Kullanıcıların ürün maliyetlerini detaylı bir şekilde hesaplayabilmelerini, sipariş durumlarını takip edebilmelerini ve raporlar oluşturabilmelerini sağlar.
 
-## Özellikler
+## 🚀 Özellikler
 
 - 🌙 Koyu/Açık tema desteği
 - 📱 Responsive tasarım (Mobil, tablet ve masaüstü uyumlu)
-- 🖨️ Profesyonel PDF çıktı formatı
+- 🖨️ Profesyonel yazdırma formatı
 - 💾 Otomatik veri kaydetme
 - 📊 Detaylı maliyet analizi
-- 🔄 Durum takip sistemi
-- 🌐 Cross-platform destek (Windows, macOS, Linux)
+- 🔄 Sipariş durumu takip sistemi
+- 💱 Çoklu para birimi desteği (TL, USD, EUR, GBP)
+- 🔍 Form arama ve filtreleme
+- 📋 Form şablonları
+- 🎯 Gerçek zamanlı hesaplama
+- 📈 KDV dahil toplam hesaplama
 
-## Gereksinimler
+## 🛠️ Teknoloji Stack
+
+### Frontend
+- **React 19.1.0** - Modern UI framework
+- **TypeScript** - Type-safe development
+- **Material-UI (MUI) v7.1.1** - UI component library
+- **React Router DOM** - Client-side routing
+- **Day.js** - Date handling
+- **React Hot Toast** - Notifications
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **TypeScript** - Type-safe development
+- **JSON File Storage** - Data persistence
+- **CORS** - Cross-origin resource sharing
+
+## 📋 Gereksinimler
 
 - Node.js (v18 veya üzeri)
 - npm veya yarn
-- MongoDB (v6.0 veya üzeri)
+- Modern web browser
 
-## Kurulum
+## 🚀 Kurulum
 
-### Backend
+### 1. Projeyi Klonlayın
 
 ```bash
-# Projeyi klonlayın
-git clone https://github.com/yourusername/Maliyet.git
+git clone https://github.com/aknkrds/Maliyet.git
 cd Maliyet
-
-# Backend bağımlılıklarını yükleyin
-cd backend
-npm install
-
-# .env dosyasını oluşturun
-cp .env.example .env
-
-# .env dosyasını düzenleyin ve MongoDB bağlantı bilgilerinizi ekleyin
-# Windows için notepad .env
-# Linux/macOS için nano .env veya vim .env
 ```
 
-### Frontend
+### 2. Backend Kurulumu
 
 ```bash
-# Frontend klasörüne gidin
-cd ../frontend
+# Backend klasörüne gidin
+cd backend
 
 # Bağımlılıkları yükleyin
 npm install
-
-# .env dosyasını oluşturun
-cp .env.example .env
 
 # Geliştirme sunucusunu başlatın
 npm run dev
 ```
 
-## Platform Spesifik Kurulum Notları
+Backend sunucusu `http://localhost:3002` adresinde çalışacaktır.
 
-### Windows
-
-1. MongoDB kurulumu:
-   - MongoDB Community Server'ı [resmi siteden](https://www.mongodb.com/try/download/community) indirin
-   - Kurulum sihirbazını takip edin
-   - MongoDB Compass'ı kurmayı unutmayın (veritabanı yönetimi için)
-
-2. Node.js kurulumu:
-   - Node.js'i [resmi siteden](https://nodejs.org/) indirin
-   - Kurulum sırasında "Automatically install necessary tools" seçeneğini işaretleyin
-
-### Linux (Ubuntu/Debian)
+### 3. Frontend Kurulumu
 
 ```bash
-# Node.js kurulumu
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# MongoDB kurulumu
-wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
-sudo apt-get update
-sudo apt-get install -y mongodb-org
-sudo systemctl start mongod
-sudo systemctl enable mongod
-```
-
-### macOS
-
-```bash
-# Homebrew ile kurulum
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Node.js kurulumu
-brew install node
-
-# MongoDB kurulumu
-brew tap mongodb/brew
-brew install mongodb-community
-brew services start mongodb-community
-```
-
-## Uygulama Başlatma
-
-### Development Modunda
-
-```bash
-# Backend başlatma
-cd backend
-npm run dev
-
-# Frontend başlatma (yeni terminal)
+# Yeni bir terminal açın ve frontend klasörüne gidin
 cd frontend
-npm run dev
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Geliştirme sunucusunu başlatın
+npm start
 ```
 
-### Production Modunda
+Frontend uygulaması `http://localhost:3000` adresinde çalışacaktır.
+
+## 📖 Kullanım
+
+### Maliyet Formu
+1. **Yeni Form Oluşturma**: Ana sayfada yeni form oluşturun
+2. **Maliyet Kalemleri**: Kumaş, aksesuar, kesim, dikim vb. maliyetleri girin
+3. **Para Birimi**: Her kalem için para birimi seçin
+4. **Otomatik Hesaplama**: Toplam ve KDV dahil genel toplam otomatik hesaplanır
+5. **Kaydetme**: Formu kaydedin ve durumunu takip edin
+
+### Sipariş Durumu Takibi
+- **Teklif Verildi**: İlk durum
+- **Onaylandı**: Müşteri onayı
+- **Red Edildi**: Müşteri reddi
+- **Üretimde**: Üretim süreci
+- **Teslim Edildi**: Tamamlanan sipariş
+
+### Raporlar
+- Tüm formları listeleme
+- Tarih ve durum bazında filtreleme
+- Form detaylarını görüntüleme
+- Yazdırma özelliği
+
+## 🔧 Geliştirme
+
+### Scripts
+
+#### Backend
+```bash
+npm run dev      # Development mode (nodemon)
+npm run build    # TypeScript derleme
+npm start        # Production mode
+```
+
+#### Frontend
+```bash
+npm start        # Development server
+npm run build    # Production build
+npm test         # Test çalıştırma
+```
+
+### Proje Yapısı
+
+```
+Maliyet/
+├── frontend/              # React uygulaması
+│   ├── src/
+│   │   ├── components/    # React bileşenleri
+│   │   ├── services/      # API servisleri
+│   │   └── assets/        # Statik dosyalar
+│   └── public/            # Public dosyalar
+├── backend/               # Express.js API
+│   ├── src/               # TypeScript kaynak kodları
+│   ├── data/              # JSON veri dosyaları
+│   └── dist/              # Derlenmiş JavaScript
+├── BACKEND_DOCUMENTATION.md
+├── FRONTEND_DOCUMENTATION.md
+├── PROJECT_OVERVIEW.md
+└── README.md
+```
+
+## 📚 Dokümantasyon
+
+Proje hakkında detaylı bilgi için aşağıdaki dokümantasyon dosyalarına bakın:
+
+- **[PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md)** - Proje genel bakış ve mimari
+- **[BACKEND_DOCUMENTATION.md](BACKEND_DOCUMENTATION.md)** - Backend API dokümantasyonu
+- **[FRONTEND_DOCUMENTATION.md](FRONTEND_DOCUMENTATION.md)** - Frontend bileşen dokümantasyonu
+
+## 🔒 Güvenlik
+
+- CORS yapılandırması
+- Input validation
+- Error handling
+- Secure data storage
+
+## 🚀 Deployment
+
+### Production Build
 
 ```bash
-# Backend build ve başlatma
+# Backend
 cd backend
 npm run build
 npm start
 
-# Frontend build ve başlatma
+# Frontend
 cd frontend
 npm run build
-npm run start
 ```
 
-## Veritabanı Yedekleme
+### Hosting Önerileri
+- **Frontend**: Netlify, Vercel, AWS S3
+- **Backend**: Heroku, DigitalOcean, AWS EC2
+- **Database**: PostgreSQL, MongoDB (JSON dosyası yerine)
 
-```bash
-# MongoDB yedekleme
-mongodump --db maliyet --out ./backup
-
-# MongoDB geri yükleme
-mongorestore --db maliyet ./backup/maliyet
-```
-
-## Güvenlik Notları
-
-1. `.env` dosyalarını asla git repository'sine eklemeyin
-2. Production ortamında güçlü şifreler kullanın
-3. MongoDB authentication'ı aktif edin
-4. Güvenlik duvarı kurallarını düzenleyin
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## Katkıda Bulunma
+## 🤝 Katkıda Bulunma
 
 1. Fork edin
 2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
@@ -156,8 +181,20 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
-## İletişim
+## 📄 Lisans
 
-- Website: [your-website.com](https://your-website.com)
-- Email: your-email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername) 
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+
+## 📞 İletişim
+
+**Akın Karadaş**
+
+- 📧 **Email**: aknkrds@hotmail.com
+- 🏢 **İş Email**: akin@symi.com.tr
+- 🏢 **İş Email**: info@symi.com.tr
+- 📱 **Telefon**: +90 533 732 8983
+- 💰 **Yardım için EVM Cüzdan Adresi**: `0xba1AFeca48bCD40eD67F7074658e780c082720Fc`
+
+---
+
+⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın! 
