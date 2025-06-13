@@ -17,7 +17,7 @@ const cors_1 = __importDefault(require("cors"));
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
-const port = 3001;
+const port = 3002;
 // Middleware
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -77,7 +77,7 @@ app.get('/api/forms/latest', (req, res) => __awaiter(void 0, void 0, void 0, fun
 app.get('/api/forms/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const forms = yield readForms();
-        const form = forms.find(f => f.id === parseInt(req.params.id));
+        const form = forms.find((f) => f.id === parseInt(req.params.id));
         if (form) {
             res.json(form);
         }
@@ -98,13 +98,14 @@ app.post('/api/forms', (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.status(201).json(newForm);
     }
     catch (error) {
+        console.error('Form kaydedilirken hata:', error);
         res.status(500).json({ error: 'Form kaydedilirken bir hata oluştu' });
     }
 }));
 app.put('/api/forms/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const forms = yield readForms();
-        const index = forms.findIndex(f => f.id === parseInt(req.params.id));
+        const index = forms.findIndex((f) => f.id === parseInt(req.params.id));
         if (index !== -1) {
             forms[index] = Object.assign(Object.assign(Object.assign({}, forms[index]), req.body), { updatedAt: new Date().toISOString() });
             yield saveForms(forms);
@@ -115,14 +116,18 @@ app.put('/api/forms/:id', (req, res) => __awaiter(void 0, void 0, void 0, functi
         }
     }
     catch (error) {
+        console.error('Form güncellenirken hata:', error);
         res.status(500).json({ error: 'Form güncellenirken bir hata oluştu' });
     }
 }));
 app.get('/api/forms/nextSerialNumber', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const forms = yield readForms();
-        const lastForm = forms[forms.length - 1];
-        const nextSerialNumber = lastForm ? lastForm.seriNo + 1 : 1;
+        // En son seri numarasını bul
+        const lastSerialNumber = forms.reduce((max, form) => {
+            return form.seriNo > max ? form.seriNo : max;
+        }, 0);
+        const nextSerialNumber = lastSerialNumber + 1;
         res.json({ nextSerialNumber });
     }
     catch (error) {

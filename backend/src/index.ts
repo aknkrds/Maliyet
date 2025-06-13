@@ -4,7 +4,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const app = express();
-const port = 3001;
+const port = 3002;
 
 // Middleware
 app.use(cors());
