@@ -1,121 +1,295 @@
-# Maliyet Hesaplama Projesi - Geliştirme Notları
+# Development Notes - Maliyet Hesaplama Uygulaması
 
-## Proje Yapısı
+## Proje Genel Bilgileri
+- **Proje Adı**: Maliyet Hesaplama Uygulaması
+- **Mevcut Versiyon**: v1.1
+- **Başlangıç Tarihi**: 2024
+- **Son Güncelleme**: Aralık 2024
+- **Geliştirici**: Akın Karadaş
 
-Proje, full-stack bir web uygulaması olarak tasarlanmıştır ve iki ana bölümden oluşmaktadır:
+## Versiyon Geçmişi
 
-### Frontend (`/frontend`)
+### v1.1 (Aralık 2024) - Resim Yönetimi ve Lisans Sistemi
+#### Yeni Özellikler
+- ✅ **Resim Yükleme Sistemi**
+  - Maliyet kalıp resmi yükleme
+  - Ürün resmi 1 ve 2 yükleme
+  - Popup ile büyük resim görüntüleme
+  - Resim silme özelliği
+  - Dosya validasyonu (sadece resim dosyaları)
+  - 5MB dosya boyutu limiti
 
-React ve TypeScript tabanlı modern web uygulaması.
+- ✅ **Lisans Sistemi**
+  - Hardware ID tabanlı lisans doğrulama
+  - Ücretsiz kullanım: 50 kayıt limiti
+  - Aylık lisans: 99.99 TL
+  - Yıllık lisans: 1000 TL
+  - Online doğrulama sistemi
+  - 2 günlük grace period
 
-Klasör Yapısı:
-```
-frontend/
-├── src/
-│   ├── components/     # React bileşenleri
-│   ├── services/      # API çağrıları ve servisler
-│   ├── assets/        # Statik dosyalar
-│   ├── App.tsx        # Ana uygulama bileşeni
-│   └── index.tsx      # Uygulama giriş noktası
-├── public/            # Statik dosyalar
-├── package.json       # Bağımlılıklar ve scripts
-└── tsconfig.json      # TypeScript yapılandırması
-```
+- ✅ **Admin Paneli**
+  - Admin girişi (aknkrds / DorukNaz2010**)
+  - Lisans oluşturma ve yönetimi
+  - Kullanıcı yönetimi
+  - Fiyat yönetimi
+  - Sistem istatistikleri
 
-### Backend (`/backend`)
+- ✅ **Navigasyon Güncellemeleri**
+  - "Raporlar" → "İş Akışları" olarak değiştirildi
+  - Yeni "Raporlar" tab'ı eklendi (gelecek özellikler için)
+  - Lisans ve Ayarlar tab'ı eklendi
 
-Node.js ve TypeScript tabanlı API sunucusu.
+#### Teknik Güncellemeler
+- ✅ **Backend**
+  - Multer middleware eklendi (resim yükleme)
+  - Yeni API endpoint'leri eklendi
+  - Hardware ID sistemi implementasyonu
+  - Admin authentication sistemi
+  - Dosya güvenliği ve validasyonu
 
-Klasör Yapısı:
-```
-backend/
-├── src/
-│   ├── index.ts       # Ana uygulama mantığı ve route'lar
-│   ├── server.ts      # Sunucu yapılandırması
-│   └── database.ts    # Veritabanı işlemleri
-├── data/             # Veri dosyaları
-└── package.json      # Bağımlılıklar ve scripts
-```
+- ✅ **Frontend**
+  - Resim yükleme bileşenleri eklendi
+  - LisansAyarlar component'i oluşturuldu
+  - AdminLogin ve AdminPanel component'leri eklendi
+  - Resim popup dialog sistemi
+  - Hardware ID oluşturma fonksiyonu
 
-## Deployment
+- ✅ **Dokümantasyon**
+  - PROJECT_OVERVIEW.md güncellendi
+  - BACKEND_DOCUMENTATION.md güncellendi
+  - FRONTEND_DOCUMENTATION.md güncellendi
+  - README.md güncellendi
 
-- Proje PM2 kullanılarak deploy edilmektedir (ecosystem.config.js)
-- TypeScript kaynak kodları derlenerek dist/ klasörüne çıktı alınmaktadır
+#### Düzeltilen Hatalar
+- ✅ ParaBirimiToplam component'inde null/undefined kontrolü
+- ✅ Resim yükleme sonrası form verisi korunması
+- ✅ TypeScript hatalarının düzeltilmesi
+- ✅ Linter hatalarının giderilmesi
 
-## Teknoloji Stack'i
+### v1.0 (İlk Sürüm) - Temel Özellikler
+#### Temel Özellikler
+- ✅ Maliyet hesaplama formu
+- ✅ Para birimi dönüşümü (TL, USD, EUR, GBP)
+- ✅ Sipariş durumu takibi
+- ✅ Form şablonları
+- ✅ Dark/Light tema desteği
+- ✅ Responsive tasarım
+- ✅ Yazdırma özelliği
 
-Frontend:
-- React
-- TypeScript
-- Modern web arayüzü bileşenleri
+## Geliştirme Süreci
 
-Backend:
-- Node.js
-- TypeScript
-- Express.js (API sunucusu)
+### Başlangıç (v1.0)
+1. **Proje Kurulumu**
+   - React + TypeScript frontend
+   - Express.js + TypeScript backend
+   - Material-UI kullanıcı arayüzü
+   - JSON dosyası tabanlı veri saklama
 
-## Geliştirme Notları
+2. **Temel Özellikler**
+   - Maliyet hesaplama algoritması
+   - Form yönetimi sistemi
+   - Para birimi dönüşümü
+   - Sipariş durumu takibi
 
-1. Proje maliyet hesaplama işlemleri için tasarlanmıştır
-2. Frontend'de kullanıcı dostu bir arayüz sunulmaktadır
-3. Backend'de hesaplama işlemleri ve veri yönetimi yapılmaktadır
+3. **UI/UX Geliştirmeleri**
+   - Responsive tasarım
+   - Dark/Light tema
+   - Yazdırma optimizasyonu
+   - Kullanıcı dostu arayüz
 
-## Yapılacaklar ve İleriki Geliştirmeler
+### v1.1 Geliştirme Süreci
+1. **Resim Yönetimi Sistemi**
+   - Multer middleware entegrasyonu
+   - Frontend resim yükleme bileşenleri
+   - Popup dialog sistemi
+   - Dosya validasyonu ve güvenliği
 
-[Bu bölüm, gelecekteki geliştirmeler için güncellenecektir]
+2. **Lisans Sistemi**
+   - Hardware ID oluşturma algoritması
+   - Lisans doğrulama sistemi
+   - Kullanıcı kayıt sistemi
+   - Admin paneli
 
-## Uygulamayı Çalıştırma
+3. **Admin Paneli**
+   - Güvenli giriş sistemi
+   - Lisans yönetimi
+   - Kullanıcı yönetimi
+   - Fiyat yönetimi
 
-### Backend'i Çalıştırma
+## Teknik Detaylar
 
-1. Backend klasörüne gidin:
-   ```bash
-   cd backend
-   ```
+### Backend Teknolojileri
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Dil**: TypeScript
+- **File Upload**: Multer
+- **Veri Saklama**: JSON dosyaları
+- **CORS**: Cross-origin resource sharing
 
-2. Bağımlılıkları yükleyin:
-   ```bash
-   npm install
-   ```
+### Frontend Teknolojileri
+- **Framework**: React 19.1.0
+- **Dil**: TypeScript
+- **UI Library**: Material-UI v7.1.1
+- **Routing**: React Router DOM
+- **Date Handling**: Day.js
+- **Notifications**: React Hot Toast
 
-3. Geliştirme modunda çalıştırın:
-   ```bash
-   npm run dev
-   ```
-   veya
-   ```bash
-   npm start
-   ```
+### Veri Modelleri
+- **FormData**: Ana form verisi
+- **MaliyetItem**: Maliyet kalemleri
+- **User**: Kullanıcı bilgileri
+- **License**: Lisans bilgileri
+- **FormTemplate**: Form şablonları
 
-### Frontend'i Çalıştırma
+### API Endpoints
+- **Form Yönetimi**: 9 endpoint
+- **Resim Yönetimi**: 2 endpoint
+- **Lisans Sistemi**: 3 endpoint
+- **Kullanıcı Yönetimi**: 3 endpoint
+- **Admin Paneli**: 6 endpoint
+- **Şablon Yönetimi**: 4 endpoint
 
-1. Yeni bir terminal açın ve frontend klasörüne gidin:
-   ```bash
-   cd frontend
-   ```
+## Güvenlik Önlemleri
 
-2. Bağımlılıkları yükleyin:
-   ```bash
-   npm install
-   ```
+### Lisans Koruması
+- Hardware ID tabanlı doğrulama
+- Online doğrulama sistemi
+- Grace period ile çevrimdışı kullanım
+- Kayıt limiti kontrolü
 
-3. Geliştirme sunucusunu başlatın:
-   ```bash
-   npm start
-   ```
+### Dosya Güvenliği
+- Sadece resim dosyaları kabul edilir
+- Dosya boyutu limiti (5MB)
+- Benzersiz dosya adlandırma
+- Güvenli dosya yükleme
 
-Frontend uygulaması otomatik olarak tarayıcınızda açılacaktır (genellikle http://localhost:3000 adresinde).
-Backend API'si http://localhost:5000 adresinde çalışacaktır.
+### Admin Güvenliği
+- Güvenli giriş sistemi
+- Token tabanlı oturum yönetimi
+- Admin yetki kontrolü
 
-### PM2 ile Çalıştırma (Production)
+## Performans Optimizasyonları
 
-Production ortamında çalıştırmak için:
+### Frontend
+- React.memo ile component memoization
+- useCallback ile fonksiyon memoization
+- useMemo ile hesaplama memoization
+- Bundle optimization
 
-```bash
-npm run build  # Her iki klasörde de build almak için
-pm2 start ecosystem.config.js
-```
+### Backend
+- Multer ile verimli dosya yükleme
+- JSON dosyası tabanlı hızlı veri erişimi
+- CORS optimizasyonu
+
+## Bilinen Sorunlar ve Çözümler
+
+### v1.1'de Çözülen Sorunlar
+1. **ParaBirimiToplam Hatası**
+   - **Sorun**: Resim yükleme sonrası null/undefined değer
+   - **Çözüm**: Null kontrolü eklendi
+
+2. **TypeScript Hataları**
+   - **Sorun**: Resim silme endpoint'inde type assertion hataları
+   - **Çözüm**: Doğru type assertion kullanıldı
+
+3. **Linter Hataları**
+   - **Sorun**: Material-UI Grid kullanım hataları
+   - **Çözüm**: Box ve CSS grid ile değiştirildi
+
+### Mevcut Sorunlar
+1. **Veri Saklama**: JSON dosyası production için uygun değil
+2. **File Storage**: Local dosya sistemi production için uygun değil
+3. **Security**: Hardware ID sistemi bypass edilebilir
+4. **Testing**: Unit ve integration testler eksik
+
+## Gelecek Geliştirmeler (v1.2+)
+
+### Kısa Vadeli (1-2 ay)
+1. **Resim Optimizasyonu**
+   - Otomatik boyutlandırma
+   - Sıkıştırma
+   - Thumbnail generation
+
+2. **Lisans Güvenliği**
+   - Gelişmiş donanım parmak izi
+   - Daha güvenli doğrulama
+
+3. **Error Handling**
+   - Global error boundaries
+   - Detaylı hata mesajları
+
+### Orta Vadeli (3-6 ay)
+1. **Database Migration**
+   - PostgreSQL entegrasyonu
+   - Cloud storage (AWS S3)
+
+2. **Authentication**
+   - JWT tabanlı kullanıcı sistemi
+   - Kullanıcı rolleri
+
+3. **Advanced Features**
+   - Real-time updates
+   - Export functionality
+   - Advanced filtering
+
+### Uzun Vadeli (6+ ay)
+1. **PWA Features**
+   - Offline support
+   - Push notifications
+
+2. **Mobile App**
+   - React Native
+   - Flutter
+
+3. **Analytics**
+   - Kullanım analitikleri
+   - Performance monitoring
+
+## Deployment Bilgileri
+
+### Development Environment
+- **Frontend**: http://localhost:3000
+- **Backend**: http://localhost:3002
+- **Admin Panel**: http://localhost:3000/admin
+
+### Production Considerations
+- **Frontend**: Netlify, Vercel, AWS S3
+- **Backend**: Heroku, DigitalOcean, AWS EC2
+- **File Storage**: AWS S3, Cloudinary
+- **Database**: PostgreSQL, MongoDB
+
+## Katkıda Bulunanlar
+
+### Ana Geliştirici
+- **Akın Karadaş**
+  - Email: aknkrds@hotmail.com
+  - İş Email: akin@symi.com.tr
+  - Telefon: +90 533 732 8983
+
+### İletişim
+- **GitHub**: https://github.com/aknkrds/Maliyet
+- **İş Web Sitesi**: https://symi.com.tr
+
+## Lisans Bilgileri
+
+### Proje Lisansı
+- **Lisans**: MIT
+- **Ticari Kullanım**: Evet
+- **Modifikasyon**: Evet
+- **Dağıtım**: Evet
+
+### Üçüncü Parti Lisansları
+- **React**: MIT
+- **Material-UI**: MIT
+- **Express.js**: MIT
+- **Node.js**: MIT
+
+## Son Güncelleme
+- **Tarih**: Aralık 2024
+- **Versiyon**: v1.1
+- **Durum**: Aktif geliştirme
+- **Sonraki Sürüm**: v1.2 (Planlanıyor)
 
 ---
 
-Son Güncelleme: [Tarih] 
+**Not**: Bu dosya, projenin geliştirme sürecini takip etmek ve gelecek geliştirmeleri planlamak için kullanılır. Her yeni özellik veya düzeltme bu dosyaya eklenmelidir. 
