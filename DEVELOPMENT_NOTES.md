@@ -42,6 +42,20 @@
   - PDF export (placeholder)
 - Yazdır ve yenile butonları korundu
 
+### v1.3 - Gelişmiş Yazdırma Sistemi
+- **3 Farklı Yazdırma Seçeneği**:
+  - **Kısıtlı Fiyat Teklifi**: Sadece ürün kodu, tarihler, toplam fiyat, KDV ve genel toplam
+  - **Kapalı Maliyet**: Tüm maliyet kalemleri (fiyatlar gizli) + toplam bilgileri
+  - **Açık Maliyet**: Tüm maliyet kalemleri (fiyatlar görünür) + toplam bilgileri
+- **Maliyet Kalemi Seçimi**: Seçenek 2 ve 3'te kullanıcı hangi kalemlerin görüneceğini seçebilir
+- **Yazdırma Önizlemesi**: Seçilen seçeneklere göre özel yazdırma formatı
+- **Akıllı Seçim Sistemi**: "Tümünü Seç" ve "Hiçbirini Seçme" butonları
+- **USD Formatı**: Tüm tutarlar USD formatında gösteriliyor
+- **Responsive Yazdırma**: Yazdırma sırasında özel CSS stilleri
+- **Yeni Component'ler**:
+  - `PrintOptionsDialog.tsx`: Yazdırma seçenekleri dialog'u
+  - `PrintForm.tsx`: Yazdırma formatı component'i
+
 ## Teknik Detaylar
 
 ### Frontend (React + TypeScript)
@@ -50,6 +64,7 @@
 - Day.js tarih kütüphanesi
 - React Hot Toast bildirimler
 - Responsive tasarım
+- Gelişmiş yazdırma sistemi
 
 ### Backend (Node.js + Express + TypeScript)
 - JSON dosya tabanlı veri saklama
@@ -74,6 +89,7 @@
 - Lazy loading (gereksiz bileşenler kaldırıldı)
 - Optimized image handling
 - Efficient data aggregation
+- Optimized print rendering
 
 ## Bilinen Sorunlar
 - Backend port çakışması (EADDRINUSE) - manuel restart gerekli
@@ -92,11 +108,12 @@
 - ESLint kuralları uygulandı
 - Responsive tasarım öncelikli
 - Kullanıcı deneyimi odaklı geliştirme
+- Yazdırma sistemi modüler tasarım
 
 ## Son Güncelleme
-- **Versiyon:** v1.2
+- **Versiyon:** v1.3
 - **Tarih:** 15 Haziran 2025
-- **Değişiklikler:** Raporlar basitleştirildi, USD formatı, aktif form hesaplaması düzeltildi
+- **Değişiklikler:** Gelişmiş yazdırma sistemi, 3 farklı yazdırma seçeneği, maliyet kalemi seçimi
 
 ## Proje Genel Bilgileri
 - **Proje Adı**: Maliyet Hesaplama Uygulaması

@@ -1,14 +1,24 @@
-# Maliyet Hesaplama Uygulaması v1.2
+# Maliyet Hesaplama Uygulaması v1.3
 
 Textile/üretim maliyet hesaplama web uygulaması. React (TypeScript, Material-UI) frontend ve Node.js/Express (TypeScript) backend ile geliştirilmiştir.
 
 ## 🚀 Özellikler
 
+### v1.3 - Gelişmiş Yazdırma Sistemi
+- **3 Farklı Yazdırma Seçeneği**:
+  - **Kısıtlı Fiyat Teklifi**: Sadece ürün kodu, tarihler, toplam fiyat, KDV ve genel toplam
+  - **Kapalı Maliyet**: Tüm maliyet kalemleri (fiyatlar gizli) + toplam bilgileri
+  - **Açık Maliyet**: Tüm maliyet kalemleri (fiyatlar görünür) + toplam bilgileri
+- **Maliyet Kalemi Seçimi**: Seçenek 2 ve 3'te kullanıcı hangi kalemlerin görüneceğini seçebilir
+- **Yazdırma Önizlemesi**: Seçilen seçeneklere göre özel yazdırma formatı
+- **Akıllı Seçim Sistemi**: "Tümünü Seç" ve "Hiçbirini Seçme" butonları
+- **USD Formatı**: Tüm tutarlar USD formatında gösteriliyor
+
 ### v1.2 - Basitleştirilmiş Raporlar ve İyileştirmeler
 - **Basitleştirilmiş Raporlar**: Karmaşık tablolar kaldırıldı, özet kartları eklendi
-- **USD Para Birimi**: Tüm tutarlar USD formatında gösteriliyor
+- **USD Para Birimi**: Tüm tutarlar USD formatında
 - **Aktif Form Hesaplaması**: Red edilen ve teslim edilen formlar aktif sayılmıyor
-- **TypeScript Hataları Düzeltildi**: Grid component sorunları çözüldü
+- **TypeScript Hataları**: Grid component sorunları çözüldü
 - **Backend İyileştirmeleri**: paraBirimiToplam undefined hatası düzeltildi
 
 ### v1.1 - Lisans Sistemi ve Görsel Özellikler
@@ -24,6 +34,29 @@ Textile/üretim maliyet hesaplama web uygulaması. React (TypeScript, Material-U
 - **Form Şablonları**: Hazır şablonlar
 - **Raporlar**: Basit özet raporları
 - **JSON Veri Saklama**: Dosya tabanlı veri yönetimi
+
+## 🖨️ Yazdırma Sistemi (v1.3)
+
+### Yazdırma Seçenekleri
+1. **Kısıtlı Fiyat Teklifi**
+   - Ürün kodu ve tarihler
+   - Toplam fiyat, KDV ve genel toplam
+   - Maliyet detayları gizli
+
+2. **Kapalı Maliyet**
+   - Tüm maliyet kalemleri (fiyatlar gizli)
+   - Kullanıcı seçimi ile kalem filtreleme
+   - Toplam bilgileri
+
+3. **Açık Maliyet**
+   - Tüm maliyet kalemleri (fiyatlar görünür)
+   - Kullanıcı seçimi ile kalem filtreleme
+   - Detaylı toplam bilgileri
+
+### Maliyet Kalemi Seçimi
+- Checkbox ile kalem seçimi
+- "Tümünü Seç" ve "Hiçbirini Seçme" butonları
+- Seçilen kalemlere göre özel yazdırma formatı
 
 ## 📋 Raporlar (v1.2)
 
@@ -59,26 +92,6 @@ Textile/üretim maliyet hesaplama web uygulaması. React (TypeScript, Material-U
 - Multer (dosya yükleme)
 - JSON dosya tabanlı veri saklama
 
-## 🚀 Kurulum
-
-### Gereksinimler
-- Node.js 18+
-- npm veya yarn
-
-### Backend Kurulumu
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-### Frontend Kurulumu
-```bash
-cd frontend
-npm install
-npm start
-```
-
 ## 📁 Proje Yapısı
 
 ```
@@ -92,6 +105,10 @@ Maliyet/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/       # React bileşenleri
+│   │   │   ├── MaliyetForm.tsx
+│   │   │   ├── PrintOptionsDialog.tsx  # Yeni
+│   │   │   ├── PrintForm.tsx           # Yeni
+│   │   │   └── ...
 │   │   ├── App.tsx          # Ana uygulama
 │   │   └── index.tsx        # Giriş noktası
 │   └── package.json
@@ -171,4 +188,4 @@ Bu proje özel kullanım için geliştirilmiştir.
 
 ---
 
-**Son Güncelleme**: v1.2 - 15 Haziran 2025 
+**Son Güncelleme**: v1.3 - 15 Haziran 2025 
