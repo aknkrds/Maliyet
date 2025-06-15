@@ -924,6 +924,141 @@ app.delete('/api/forms/:id/images/:imageType', async (req, res) => {
   }
 });
 
+// Rapor endpoint'leri
+app.get('/api/reports/summary', async (req, res) => {
+  try {
+    const forms = await readForms();
+    
+    // Tüm formlar
+    const totalForms = forms.length;
+    const totalAmount = forms.reduce((sum, form) => sum + form.genelToplam, 0);
+    
+    // Durum bazında gruplama
+    const statusGroups = forms.reduce((acc, form) => {
+      const status = form.siparisDurumu || 'BELİRTİLMEDİ';
+      if (!acc[status]) {
+        acc[status] = { count: 0, total: 0, forms: [] };
+      }
+      acc[status].count++;
+      acc[status].total += form.genelToplam;
+      acc[status].forms.push(form);
+      return acc;
+    }, {} as { [key: string]: { count: number; total: number; forms: FormData[] } });
+    
+    // Para birimi bazında toplamlar
+    const currencyTotals = forms.reduce((acc, form) => {
+      if (form.paraBirimiToplam) {
+        acc.TL += form.paraBirimiToplam.TL || 0;
+        acc.USD += form.paraBirimiToplam.USD || 0;
+        acc.EUR += form.paraBirimiToplam.EUR || 0;
+        acc.GBP += form.paraBirimiToplam.GBP || 0;
+      }
+      return acc;
+    }, { TL: 0, USD: 0, EUR: 0, GBP: 0 });
+    
+    // Aylık istatistikler (son 12 ay)
+    const monthlyStats = [];
+    const now = new Date();
+    for (let i = 11; i >= 0; i--) {
+      const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const monthStart = date.toISOString().split('T')[0];
+      const monthEnd = new Date(date.getFullYear(), date.getMonth() + 1, 0).toISOString().split('T')[0];
+      
+      const monthForms = forms.filter(form => {
+        const formDate = form.teklifTarihi;
+        return formDate >= monthStart && formDate <= monthEnd;
+      });
+      
+      monthlyStats.push({
+        month: date.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long' }),
+        count: monthForms.length,
+        total: monthForms.reduce((sum, form) => sum + form.genelToplam, 0),
+        year: date.getFullYear(),
+        monthNumber: date.getMonth() + 1
+      });
+    }
+    
+    // En çok kullanılan ürün kodları
+    const productCodeStats = forms.reduce((acc, form) => {
+      const code = form.urunKodu;
+      if (!acc[code]) {
+        acc[code] = { count: 0, total: 0 };
+      }
+      acc[code].count++;
+      acc[code].total += form.genelToplam;
+      return acc;
+    }, {} as { [key: string]: { count: number; total: number } });
+    
+    const topProductCodes = Object.entries(productCodeStats)
+      .sort(([,a], [,b]) => b.count - a.count)
+      .slice(0, 10)
+      .map(([code, stats]) => ({ code, ...stats }));
+    
+    const report = {
+      summary: {
+        totalForms,
+        totalAmount,
+        currencyTotals
+      },
+      statusBreakdown: statusGroups,
+      monthlyStats,
+      topProductCodes,
+      generatedAt: new Date().toISOString()
+    };
+    
+    res.json(report);
+  } catch (error) {
+    console.error('Rapor oluşturma hatası:', error);
+    res.status(500).json({ error: 'Rapor oluşturulurken bir hata oluştu' });
+  }
+});
+
+app.get('/api/reports/detailed', async (req, res) => {
+  try {
+    const forms = await readForms();
+    const { startDate, endDate, status } = req.query;
+    
+    let filteredForms = forms;
+    
+    // Tarih filtresi
+    if (startDate && endDate) {
+      filteredForms = filteredForms.filter(form => {
+        const formDate = form.teklifTarihi;
+        return formDate >= startDate && formDate <= endDate;
+      });
+    }
+    
+    // Durum filtresi
+    if (status && status !== 'TÜMÜ') {
+      filteredForms = filteredForms.filter(form => form.siparisDurumu === status);
+    }
+    
+    // Detaylı rapor
+    const detailedReport = {
+      filters: { startDate, endDate, status },
+      totalCount: filteredForms.length,
+      totalAmount: filteredForms.reduce((sum, form) => sum + form.genelToplam, 0),
+      forms: filteredForms.map(form => ({
+        id: form.id,
+        seriNo: form.seriNo,
+        urunKodu: form.urunKodu,
+        teklifTarihi: form.teklifTarihi,
+        siparisDurumu: form.siparisDurumu,
+        genelToplam: form.genelToplam,
+        paraBirimiToplam: form.paraBirimiToplam,
+        iptalDurumu: form.iptalDurumu,
+        createdAt: form.createdAt
+      })),
+      generatedAt: new Date().toISOString()
+    };
+    
+    res.json(detailedReport);
+  } catch (error) {
+    console.error('Detaylı rapor oluşturma hatası:', error);
+    res.status(500).json({ error: 'Detaylı rapor oluşturulurken bir hata oluştu' });
+  }
+});
+
 // Server'ı başlat
 initializeDataFiles().then(() => {
   app.listen(port, () => {

@@ -1,4 +1,102 @@
-# Development Notes - Maliyet Hesaplama Uygulaması
+# Maliyet Hesaplama Uygulaması - Geliştirme Notları
+
+## Proje Geçmişi
+
+### v1.0 - Temel Özellikler
+- Maliyet hesaplama formu
+- İş akışları (raporlar)
+- Form şablonları
+- JSON dosya tabanlı veri saklama
+- React + TypeScript frontend
+- Node.js + Express backend
+
+### v1.1 - Lisans Sistemi ve Görsel Özellikler
+- Lisans ve ayarlar sayfası
+- Kullanıcı kayıt sistemi
+- Donanım ID tabanlı lisans doğrulama
+- Admin paneli
+- Resim yükleme özelliği (3 resim: maliyet kalıp, ürün 1, ürün 2)
+- Resim önizleme ve popup görüntüleme
+- Resim silme özelliği
+- "İş Akışları" sekmesi (eski "Raporlar")
+- Yeni "Raporlar" sekmesi (başlangıçta boş)
+- Versiyon etiketi (v1.1) ana ekranda
+
+### v1.2 - Basitleştirilmiş Raporlar ve İyileştirmeler
+- Raporlar sayfası tamamen yeniden tasarlandı
+- Karmaşık tablolar ve detaylı raporlar kaldırıldı
+- Basit özet kartları eklendi:
+  - Genel özet (toplam form, toplam tutar, ortalama, aktif formlar)
+  - Durum bazında özet (her durum için adet ve toplam tutar)
+  - Para birimi bazında toplamlar
+- Para birimi formatı USD olarak düzeltildi
+- Aktif form sayısı hesaplaması düzeltildi:
+  - Red edilen ve teslim edilen formlar aktif sayılmıyor
+  - Sadece teklif verildi, onaylandı, üretimde olanlar aktif
+- Backend'de paraBirimiToplam undefined hatası düzeltildi
+- TypeScript Grid component hataları düzeltildi (CSS Grid kullanımına geçildi)
+- Gereksiz özellikler kaldırıldı:
+  - Detaylı filtreler
+  - Aylık istatistikler
+  - Ürün kodu listeleri
+  - PDF export (placeholder)
+- Yazdır ve yenile butonları korundu
+
+## Teknik Detaylar
+
+### Frontend (React + TypeScript)
+- Material-UI v7 kullanımı
+- CSS Grid layout (Material-UI Grid yerine)
+- Day.js tarih kütüphanesi
+- React Hot Toast bildirimler
+- Responsive tasarım
+
+### Backend (Node.js + Express + TypeScript)
+- JSON dosya tabanlı veri saklama
+- Multer resim yükleme
+- Donanım ID oluşturma
+- Lisans anahtarı doğrulama
+- Rapor oluşturma API'leri
+
+### Veri Modelleri
+- FormData: Maliyet hesaplama formları
+- User: Kullanıcı bilgileri
+- License: Lisans bilgileri
+- FormTemplate: Form şablonları
+
+## Güvenlik
+- Donanım ID tabanlı lisans doğrulama
+- Admin paneli giriş sistemi
+- Resim dosya türü kontrolü
+- Dosya boyutu sınırlaması
+
+## Performans
+- Lazy loading (gereksiz bileşenler kaldırıldı)
+- Optimized image handling
+- Efficient data aggregation
+
+## Bilinen Sorunlar
+- Backend port çakışması (EADDRINUSE) - manuel restart gerekli
+- Bazı eski formlarda paraBirimiToplam undefined olabilir
+
+## Gelecek Planları
+- PDF export özelliği
+- Excel export
+- Email bildirimleri
+- Gelişmiş filtreleme
+- Dashboard grafikleri
+- Mobil uygulama
+
+## Geliştirici Notları
+- Tüm değişiklikler TypeScript ile tip güvenli
+- ESLint kuralları uygulandı
+- Responsive tasarım öncelikli
+- Kullanıcı deneyimi odaklı geliştirme
+
+## Son Güncelleme
+- **Versiyon:** v1.2
+- **Tarih:** 15 Haziran 2025
+- **Değişiklikler:** Raporlar basitleştirildi, USD formatı, aktif form hesaplaması düzeltildi
 
 ## Proje Genel Bilgileri
 - **Proje Adı**: Maliyet Hesaplama Uygulaması

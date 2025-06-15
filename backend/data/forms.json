@@ -134,91 +134,91 @@
         "birim": "",
         "birimTipi": "Metre",
         "fiyat": 12,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "aksesuar1": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 12,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "aksesuar2": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 2,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "aksesuar3": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 3,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "kesimYeri": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 4,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "dikimYeri": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 5,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "utuPaket": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 0.99,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "yikamaYeri": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 2,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "ekMaliyet1": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 2,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "ekMaliyet2": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 2,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "isletmeGiderleri": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 1,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "kar": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 0.99,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       },
       "sevkiyat": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "",
         "fiyat": 0.99,
-        "paraBirimi": "TL"
+        "paraBirimi": "USD"
       }
     },
     "notlar": "",
@@ -228,8 +228,8 @@
     "iptalDurumu": false,
     "ekstraNotlar": "",
     "paraBirimiToplam": {
-      "TL": 47.970000000000006,
-      "USD": 0,
+      "TL": 0,
+      "USD": 47.970000000000006,
       "EUR": 0,
       "GBP": 0
     },
@@ -244,7 +244,7 @@
     "id": 1749050495975,
     "createdAt": "2025-06-04T15:21:35.975Z",
     "seriNo": 0,
-    "updatedAt": "2025-06-04T21:25:33.535Z"
+    "updatedAt": "2025-06-15T19:13:42.451Z"
   },
   {
     "seriNo": 0,
@@ -378,21 +378,21 @@
         "birim": "",
         "birimTipi": "Metre",
         "fiyat": 3,
-        "paraBirimi": "USD"
+        "paraBirimi": "TL"
       },
       "aksesuar1": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 1,
-        "paraBirimi": "USD"
+        "paraBirimi": "TL"
       },
       "aksesuar2": {
         "aciklama": "",
         "birim": "",
         "birimTipi": "Adet",
         "fiyat": 0.99,
-        "paraBirimi": "USD"
+        "paraBirimi": "TL"
       },
       "aksesuar3": {
         "aciklama": "",
@@ -406,7 +406,7 @@
         "birim": "",
         "birimTipi": "",
         "fiyat": 1.02,
-        "paraBirimi": "USD"
+        "paraBirimi": "TL"
       },
       "dikimYeri": {
         "aciklama": "",
@@ -472,8 +472,8 @@
     "iptalDurumu": false,
     "ekstraNotlar": "",
     "paraBirimiToplam": {
-      "TL": 0,
-      "USD": 6.01,
+      "TL": 6.01,
+      "USD": 0,
       "EUR": 0,
       "GBP": 0
     },
@@ -486,7 +486,8 @@
       "teslim_tarihi": ""
     },
     "id": 1749073380116,
-    "createdAt": "2025-06-04T21:43:00.116Z"
+    "createdAt": "2025-06-04T21:43:00.116Z",
+    "updatedAt": "2025-06-15T19:18:02.035Z"
   },
   {
     "seriNo": 0,
